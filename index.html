@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Store of Brainrots</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0a0f, #1a1a2e);
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 40px 20px 10px;
+    }
+    h1 {
+      font-size: 40px;
+      background: linear-gradient(90deg, #00f0ff, #ff00ff, #00f0ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glow 3s infinite linear;
+    }
+    @keyframes glow {
+      0% {filter: drop-shadow(0 0 6px #00f0ff);}
+      50% {filter: drop-shadow(0 0 12px #ff00ff);}
+      100% {filter: drop-shadow(0 0 6px #00f0ff);}
+    }
+    h2 {
+      font-size: 22px;
+      margin-top: 5px;
+      color: #aaa;
+    }
+    .descripcion {
+      font-size: 18px;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    .productos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+    .producto {
+      background: #11131a;
+      border-radius: 12px;
+      padding: 20px;
+      width: 260px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .producto:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    p {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #ddd;
+    }
+    button {
+      background: #0ff;
+      color: #000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: box-shadow 0.3s;
+    }
+    button:hover {
+      box-shadow: 0 0 10px #0ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hola a Reclaim of Brainrot</h1>
+    <h2>Store of Brainrots</h2>
+    <div class="descripcion">La página más confiable para Comprar tu Brainrot</div>
+  </header>
+
+  <div class="productos">
+    <div class="producto">
+      <img src="https://static.wikia.nocookie.net/stealabr/images/b/b8/Graipuss.png/revision/latest?cb=20250816173622" alt="Brainrot 1">
+      <p>Da 1M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Ver producto</button>
+    </div>
+
+    <div class="producto">
+      <img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Brainrot 2">
+      <p>Da 700K/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Ver producto</button>
+    </div>
+  </div>
+</body>
+</html>
