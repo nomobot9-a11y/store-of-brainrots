@@ -7,163 +7,192 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 /* General */
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: radial-gradient(circle at top, #0b0b0b, #1a1a1a);
-  color: #fff;
-  text-align: center;
-  overflow-x: hidden;
+body{
+  font-family:'Roboto',sans-serif;
+  margin:0;
+  padding:0;
+  background: radial-gradient(circle at top,#0b0b0b,#1a1a1a);
+  color:#fff;
+  text-align:center;
+  overflow-x:hidden;
+}
+
+/* Animación de partículas flotantes */
+.particles{
+  position:fixed;
+  top:0;left:0;width:100%;height:100%;
+  pointer-events:none;
+  z-index:0;
+  overflow:hidden;
+}
+.particle{
+  position:absolute;
+  width:5px;height:5px;
+  background:gold;
+  border-radius:50%;
+  opacity:0.8;
+  animation:float 15s linear infinite;
+}
+@keyframes float{
+  0%{transform:translateY(0px);}
+  50%{transform:translateY(-800px);}
+  100%{transform:translateY(0px);}
 }
 
 /* Header */
-header {
-  background: linear-gradient(90deg, #ffcc00, #ff9900);
-  padding: 70px 20px;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.6);
-  position: relative;
-  overflow: hidden;
+header{
+  background:linear-gradient(90deg,#ffcc00,#ff9900);
+  padding:70px 20px;
+  box-shadow:0 6px 25px rgba(0,0,0,0.6);
+  position:relative;
+  overflow:hidden;
 }
-header h1 {
-  margin: 0;
-  font-size: 3.5em;
-  color: #1a1a1a;
-  text-shadow: 0 0 15px #ffcc00;
-  animation: glow 2s ease-in-out infinite alternate;
+header h1{
+  margin:0;
+  font-size:3.5em;
+  color:#1a1a1a;
+  text-shadow:0 0 15px #ffcc00;
+  animation:glow 2s ease-in-out infinite alternate;
 }
-@keyframes glow {
-  0% { text-shadow:0 0 10px #ffcc00,0 0 20px #ffcc00; }
-  100% { text-shadow:0 0 20px #ffcc00,0 0 30px #ff9900; }
+@keyframes glow{
+  0%{text-shadow:0 0 10px #ffcc00,0 0 20px #ffcc00;}
+  100%{text-shadow:0 0 20px #ffcc00,0 0 30px #ff9900;}
 }
 
 /* Secciones */
-.section {
-  padding: 80px 20px;
+.section{
+  padding:80px 20px;
+  position:relative;
+  z-index:1;
 }
-.section h2 {
-  font-size: 2.5em;
-  margin-bottom: 50px;
-  color: #ffcc00;
-  text-shadow: 0 0 15px #ffcc00;
+.section h2{
+  font-size:2.5em;
+  margin-bottom:50px;
+  color:#ffcc00;
+  text-shadow:0 0 15px #ffcc00;
 }
 
 /* Productos */
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 35px;
+.products{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:35px;
 }
-.product {
-  background: #222;
-  border-radius: 25px;
-  padding: 25px;
-  width: 250px;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-  opacity: 0;
-  animation: fadeIn 0.8s forwards;
+.product{
+  background:#222;
+  border-radius:25px;
+  padding:25px;
+  width:250px;
+  transition:transform 0.3s,box-shadow 0.3s;
+  box-shadow:0 8px 20px rgba(0,0,0,0.6);
+  opacity:0;
+  animation:fadeIn 0.8s forwards;
 }
-.product:nth-child(1) { animation-delay: 0.1s; }
-.product:nth-child(2) { animation-delay: 0.2s; }
-.product:nth-child(3) { animation-delay: 0.3s; }
-.product:nth-child(4) { animation-delay: 0.4s; }
-@keyframes fadeIn { to { opacity: 1; } }
+.product:nth-child(1){animation-delay:0.1s;}
+.product:nth-child(2){animation-delay:0.2s;}
+.product:nth-child(3){animation-delay:0.3s;}
+.product:nth-child(4){animation-delay:0.4s;}
+.product:nth-child(5){animation-delay:0.5s;}
+.product:nth-child(6){animation-delay:0.6s;}
+@keyframes fadeIn{to{opacity:1;}}
 
-.product img {
-  width: 100%;
-  border-radius: 20px;
-  transition: transform 0.3s;
+.product img{
+  width:100%;
+  border-radius:20px;
+  transition:transform 0.3s;
 }
-.product:hover img {
-  transform: scale(1.08) rotate(1deg);
+.product:hover img{
+  transform:scale(1.08) rotate(1deg);
 }
-.product h3 {
-  margin: 20px 0 10px;
-  color: #ffcc00;
-  font-size: 1.4em;
+.product h3{
+  margin:20px 0 10px;
+  color:#ffcc00;
+  font-size:1.4em;
 }
-.product p {
-  margin: 5px 0 15px;
-  color: #ccc;
-  font-weight: bold;
+.product p{
+  margin:5px 0 15px;
+  color:#ccc;
+  font-weight:bold;
 }
-.product button {
-  padding: 12px 28px;
-  border: none;
-  border-radius: 15px;
-  background: linear-gradient(90deg,#ffcc00,#ff9900);
-  color: #1a1a1a;
-  font-weight: bold;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+.product button{
+  padding:12px 28px;
+  border:none;
+  border-radius:15px;
+  background:linear-gradient(90deg,#ffcc00,#ff9900);
+  color:#1a1a1a;
+  font-weight:bold;
+  cursor:pointer;
+  transition:transform 0.2s,box-shadow 0.2s;
 }
-.product button:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #ffcc00;
+.product button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #ffcc00;
 }
 
 /* Nuevos Brainrots */
-.new .product {
-  border: 3px solid gold;
-  box-shadow: 0 0 35px gold;
-  animation: bounce 1s infinite alternate;
-  background: linear-gradient(135deg, #222, #333);
+.new .product{
+  border:3px solid gold;
+  box-shadow:0 0 35px gold;
+  animation:bounce 1s infinite alternate;
+  background:linear-gradient(135deg,#222,#333);
 }
-@keyframes bounce {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-12px); }
+@keyframes bounce{
+  0%{transform:translateY(0px);}
+  100%{transform:translateY(-12px);}
 }
 
 /* Sección Obtener Brainrot */
-.get-brainrot {
-  background: linear-gradient(135deg,#111,#1a1a1a);
-  border: 3px solid #ffcc00;
-  border-radius: 30px;
-  margin: 80px auto;
-  padding: 70px 50px;
-  max-width: 900px;
-  box-shadow: 0 0 40px rgba(255,204,0,0.8);
-  transition: transform 0.3s;
+.get-brainrot{
+  background:linear-gradient(135deg,#111,#1a1a1a);
+  border:3px solid #ffcc00;
+  border-radius:30px;
+  margin:80px auto;
+  padding:70px 50px;
+  max-width:900px;
+  box-shadow:0 0 40px rgba(255,204,0,0.8);
+  transition:transform 0.3s;
 }
-.get-brainrot:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 0 60px rgba(255,204,0,1);
+.get-brainrot:hover{
+  transform:translateY(-7px);
+  box-shadow:0 0 60px rgba(255,204,0,1);
 }
-.get-brainrot h2 {
-  font-size: 3em;
-  margin-bottom: 30px;
-  color: #ffcc00;
-  text-shadow: 0 0 20px #ffcc00;
+.get-brainrot h2{
+  font-size:3em;
+  margin-bottom:30px;
+  color:#ffcc00;
+  text-shadow:0 0 20px #ffcc00;
 }
-.get-brainrot p {
-  font-size: 1.3em;
-  color: #ccc;
-  line-height: 1.8;
-  margin-bottom: 40px;
+.get-brainrot p{
+  font-size:1.3em;
+  color:#ccc;
+  line-height:1.8;
+  margin-bottom:40px;
 }
-.get-brainrot a {
-  text-decoration: none;
-  color: #1a1a1a;
-  background: linear-gradient(90deg,#ffcc00,#ff9900);
-  padding: 20px 40px;
-  border-radius: 18px;
-  font-weight: bold;
-  font-size: 1.3em;
-  transition: transform 0.2s, box-shadow 0.2s;
+.get-brainrot a{
+  text-decoration:none;
+  color:#1a1a1a;
+  background:linear-gradient(90deg,#ffcc00,#ff9900);
+  padding:20px 40px;
+  border-radius:18px;
+  font-weight:bold;
+  font-size:1.3em;
+  transition:transform 0.2s,box-shadow 0.2s;
 }
-.get-brainrot a:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 30px #ffcc00;
+.get-brainrot a:hover{
+  transform:scale(1.07);
+  box-shadow:0 0 30px #ffcc00;
 }
 
 /* Responsive */
 @media(max-width:768px){.product{width:45%;}}
 @media(max-width:480px){.product{width:90%;}}
+
 </style>
 </head>
 <body>
+
+<div class="particles" id="particles"></div>
 
 <header>
 <h1>Store of Brainrots</h1>
@@ -191,6 +220,18 @@ header h1 {
 <h3>Graipuss Medussi</h3>
 <p>Da 1M/s</p>
 <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
+</div>
+<div class="product">
+<img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
+<h3>Job Job Job Sahur</h3>
+<p>Da 700K/s</p>
+<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Comprar</button>
+</div>
+<div class="product">
+<img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
+<h3>La Grande Combinasion</h3>
+<p>Da 10M/s</p>
+<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
 </div>
 <div class="product">
 <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
@@ -226,6 +267,21 @@ header h1 {
 <p>Para obtener tu Brainrot solo debes mandar solicitud, esperar un momento, seguirme y unirte. ¡Y listo! Ya tendrás tu Brainrot.</p>
 <a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Unirse en Roblox</a>
 </div>
+
+<script>
+// Generar partículas flotantes doradas
+const particlesContainer=document.getElementById('particles');
+for(let i=0;i<80;i++){
+  const particle=document.createElement('div');
+  particle.className='particle';
+  particle.style.left=Math.random()*100+'%';
+  particle.style.top=Math.random()*100+'%';
+  particle.style.width=(2+Math.random()*5)+'px';
+  particle.style.height=particle.style.width;
+  particle.style.animationDuration=(10+Math.random()*10)+'s';
+  particlesContainer.appendChild(particle);
+}
+</script>
 
 </body>
 </html>
