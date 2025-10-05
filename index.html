@@ -5,77 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Store of Brainrots</title>
   <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    h1 {
-      color: #00ffcc;
-      text-shadow: 0 0 15px #00ffcc;
-      margin-top: 20px;
-    }
-    p {
-      color: #ccc;
-      font-size: 18px;
-    }
-    .product {
-      background: #1a1a1a;
-      margin: 30px auto;
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #1e3c72, #2a5298);
+      color: #fff;
+      text-align: center;
       padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .product {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #fff;
       border-radius: 15px;
-      width: 300px;
-      box-shadow: 0 0 15px rgba(0,255,204,0.3);
+      width: 220px;
+      padding: 15px;
+      transition: transform 0.3s, background-color 0.3s;
+      backdrop-filter: blur(5px);
     }
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    button {
-      background-color: #00ffcc;
-      border: none;
-      color: #111;
-      padding: 10px 20px;
-      margin-top: 15px;
-      font-size: 16px;
-      border-radius: 10px;
+
+    .product:hover {
+      transform: translateY(-10px) scale(1.05);
+      background-color: rgba(255, 255, 255, 0.2);
       cursor: pointer;
-      transition: 0.3s;
     }
+
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    .product img:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    h3 {
+      margin-bottom: 5px;
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .product p {
+      font-size: 1em;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      font-size: 1em;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
     button:hover {
-      background-color: #ff66ff;
-      color: white;
-      transform: scale(1.05);
+      background-color: #ffd633;
+      transform: scale(1.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .products-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product {
+        width: 80%;
+      }
     }
   </style>
 </head>
 <body>
 
   <h1>Store of Brainrots</h1>
-  <p>La página más confiable para Comprar tu Brainrot</p>
+  <p>¡La página más confiable para comprar tu Brainrot favorito!</p>
 
-  <div class="product">
-    <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
-    <h3>Graipuss Medussi</h3>
-    <p>Da 1M/s</p>
-    <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
-  </div>
+  <div class="products-container">
+    <div class="product" onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">
+      <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
+      <h3>Graipuss Medussi</h3>
+      <p>Da 1M/s</p>
+      <button>Comprar</button>
+    </div>
 
-  <div class="product">
-    <img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
-    <h3>Job Job Job Sahur</h3>
-    <p>Da 700K/s</p>
-    <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Comprar</button>
-  </div>
+    <div class="product" onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">
+      <img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
+      <h3>Job Job Job Sahur</h3>
+      <p>Da 700K/s</p>
+      <button>Comprar</button>
+    </div>
 
-  <div class="product">
-    <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
-    <h3>La Grande Combinasion</h3>
-    <p>Da 10M/s</p>
-    <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
+    <div class="product" onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">
+      <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
+      <h3>La Grande Combinasion</h3>
+      <p>Da 10M/s</p>
+      <button>Comprar</button>
+    </div>
   </div>
 
 </body>
