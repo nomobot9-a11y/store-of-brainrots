@@ -6,49 +6,52 @@
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #1a1a1a, #222);
+      background: linear-gradient(135deg, #1a1a1a, #111);
       color: #fff;
       margin: 0;
       padding: 0;
       text-align: center;
     }
     h1 {
-      padding: 20px;
+      padding: 25px;
       background-color: #111;
       color: gold;
-      font-size: 2.5em;
+      font-size: 3em;
       letter-spacing: 2px;
       text-shadow: 2px 2px #000;
       margin: 0;
     }
     .section {
-      padding: 30px 10px;
+      padding: 40px 10px;
     }
     .products {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 25px;
+      gap: 30px;
     }
     .product {
-      background-color: #222;
-      padding: 15px;
-      border-radius: 15px;
-      width: 220px;
+      background: linear-gradient(145deg, #222, #333);
+      padding: 20px;
+      border-radius: 20px;
+      width: 240px;
       transition: transform 0.3s, box-shadow 0.3s;
       position: relative;
+      border: 2px solid #444;
     }
     .product:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 0 20px gold;
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 25px gold;
+      border-color: gold;
     }
     .product img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
+      border: 1px solid #555;
     }
     .product h3 {
-      margin: 10px 0 5px;
-      font-size: 1.2em;
+      margin: 12px 0 5px;
+      font-size: 1.3em;
     }
     .product p {
       margin: 5px 0;
@@ -56,33 +59,34 @@
       color: #ffcc00;
     }
     .product button {
-      margin-top: 10px;
-      padding: 8px 15px;
+      margin-top: 12px;
+      padding: 10px 18px;
       border: none;
       background-color: #ffcc00;
       color: #000;
       font-weight: bold;
-      border-radius: 5px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
     .product button:hover {
       background-color: #e6b800;
+      transform: scale(1.05);
     }
     .stars {
       color: gold;
-      margin: 5px 0;
+      margin: 6px 0;
     }
     .verified {
       position: absolute;
-      top: 10px;
-      right: 10px;
+      top: 12px;
+      right: 12px;
       background-color: gold;
       color: #000;
       font-weight: bold;
-      padding: 2px 5px;
-      border-radius: 5px;
-      font-size: 0.8em;
+      padding: 3px 6px;
+      border-radius: 6px;
+      font-size: 0.85em;
     }
     .new .product {
       border: 3px solid gold;
@@ -90,32 +94,33 @@
     }
     @keyframes bounce {
       0% { transform: translateY(0px); }
-      100% { transform: translateY(-10px); }
+      100% { transform: translateY(-12px); }
     }
-    /* Botón especial de seguirme */
     .follow-btn {
-      margin: 20px auto;
-      padding: 15px 25px;
+      margin: 25px auto;
+      padding: 18px 30px;
       background-color: #ff6600;
       color: #fff;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: bold;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s, transform 0.2s;
     }
     .follow-btn:hover {
       background-color: #ff8533;
+      transform: scale(1.05);
     }
     .follow-instructions {
-      margin: 10px auto 30px;
+      margin: 15px auto 35px;
       width: 80%;
-      font-size: 1em;
+      font-size: 1.05em;
       color: #ccc;
       background-color: #111;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 18px;
+      border-radius: 12px;
+      line-height: 1.6em;
     }
   </style>
 </head>
@@ -171,42 +176,47 @@
         <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
       </div>
+
       <!-- Chicleteira Bicicleteira -->
       <div class="product">
         <div class="verified">✔</div>
         <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
         <h3>Chicleteira Bicicleteira</h3>
         <p>3,5M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
       </div>
+
       <!-- Los Combinasionas -->
       <div class="product">
         <div class="verified">✔</div>
         <img src="https://tr.rbxcdn.com/180DAY-1b580c508a172172641e7951c3146732/420/420/BackAccessory/Webp/noFilter" alt="Los Combinasionas">
         <h3>Los Combinasionas</h3>
         <p>15M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511620141/Los-Combinasionas'">Comprar</button>
       </div>
+
       <!-- Los Hotspotsitos -->
       <div class="product">
         <div class="verified">✔</div>
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCH-TWG-kcKDzs7camsq2cblFNtMSm64q-Aw&s" alt="Los Hotspotsitos">
         <h3>Los Hotspotsitos</h3>
         <p>20M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511924064/Los-Hotspotsitos'">Comprar</button>
       </div>
+
       <!-- Los Bros -->
       <div class="product">
         <div class="verified">✔</div>
         <img src="https://static.wikitide.net/italianbrainrotwiki/thumb/d/dd/Los_Tralaleritos_and_Los_Tungtungtungcitos.png/300px-Los_Tralaleritos_and_Los_Tungtungtungcitos.png" alt="Los Bros">
         <h3>Los Bros</h3>
         <p>24M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1512331738/Los-Bros'">Comprar</button>
       </div>
+
       <!-- Job Job Job Sahur -->
       <div class="product">
         <div class="verified">✔</div>
@@ -229,7 +239,7 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCH-TWG-kcKDzs7camsq2cblFNtMSm64q-Aw&s" alt="Los Hotspotsitos">
         <h3>Los Hotspotsitos</h3>
         <p>20M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511924064/Los-Hotspotsitos'">Comprar</button>
       </div>
 
@@ -239,7 +249,7 @@
         <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
         <h3>Chicleteira Bicicleteira</h3>
         <p>3,5M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
       </div>
 
@@ -249,7 +259,7 @@
         <img src="https://tr.rbxcdn.com/180DAY-1b580c508a172172641e7951c3146732/420/420/BackAccessory/Webp/noFilter" alt="Los Combinasionas">
         <h3>Los Combinasionas</h3>
         <p>15M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511620141/Los-Combinasionas'">Comprar</button>
       </div>
 
@@ -259,7 +269,7 @@
         <img src="https://static.wikitide.net/italianbrainrotwiki/thumb/d/dd/Los_Tralaleritos_and_Los_Tungtungtungcitos.png/300px-Los_Tralaleritos_and_Los_Tungtungtungcitos.png" alt="Los Bros">
         <h3>Los Bros</h3>
         <p>24M/s</p>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="stars">⭐⭐⭐⭐</div>
         <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1512331738/Los-Bros'">Comprar</button>
       </div>
     </div>
