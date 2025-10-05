@@ -4,43 +4,54 @@
   <meta charset="UTF-8">
   <title>Store of Brainrots - Profesional</title>
   <style>
-    /* ----------- Estilos generales ----------- */
+    /* ---------- Fuentes y cuerpo ---------- */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
       color: #fff;
       text-align: center;
+      overflow-x: hidden;
     }
 
-    /* ----------- Encabezado ----------- */
+    /* ---------- Header animado ---------- */
     header {
       background: linear-gradient(90deg, #ffcc00, #ff9900);
-      padding: 40px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      text-shadow: 0 0 15px #ffcc00;
+      padding: 50px 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
     }
 
     header h1 {
       margin: 0;
       font-size: 3em;
       color: #1a1a1a;
+      text-shadow: 0 0 15px #ffcc00;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    /* ----------- Secciones ----------- */
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
+      100% { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900; }
+    }
+
+    /* ---------- Secciones ---------- */
     .section {
-      padding: 50px 20px;
+      padding: 60px 20px;
     }
 
     .section h2 {
       font-size: 2.5em;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #ffcc00;
       text-shadow: 0 0 10px #ffcc00;
     }
 
-    /* ----------- Contenedor de productos ----------- */
+    /* ---------- Contenedor de productos ---------- */
     .products {
       display: flex;
       flex-wrap: wrap;
@@ -48,43 +59,43 @@
       gap: 30px;
     }
 
-    /* ----------- Tarjetas de productos ----------- */
+    /* ---------- Tarjetas de productos ---------- */
     .product {
       background: #222;
-      border-radius: 20px;
-      padding: 20px;
+      border-radius: 25px;
+      padding: 25px;
       width: 240px;
       transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
       position: relative;
     }
 
     .product img {
       width: 100%;
-      border-radius: 15px;
+      border-radius: 20px;
       transition: transform 0.3s;
     }
 
     .product:hover img {
-      transform: scale(1.05);
+      transform: scale(1.07) rotate(1deg);
     }
 
     .product h3 {
-      margin: 15px 0 5px;
+      margin: 20px 0 10px;
       color: #ffcc00;
-      font-size: 1.2em;
+      font-size: 1.3em;
     }
 
     .product p {
-      margin: 5px 0 10px;
+      margin: 5px 0 15px;
       color: #ccc;
       font-weight: bold;
     }
 
     .product button {
-      padding: 12px 20px;
+      padding: 12px 25px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       background: linear-gradient(90deg, #ffcc00, #ff9900);
       color: #1a1a1a;
       font-weight: bold;
@@ -94,20 +105,20 @@
 
     .product button:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 15px #ffcc00;
+      box-shadow: 0 0 20px #ffcc00;
     }
 
-    /* ----------- Productos nuevos ----------- */
+    /* ---------- Productos nuevos ---------- */
     .new .product {
       border: 3px solid gold;
-      box-shadow: 0 0 25px gold;
+      box-shadow: 0 0 30px gold;
       animation: bounce 1s infinite alternate;
       background: linear-gradient(135deg, #222, #333);
     }
 
     @keyframes bounce {
       0% { transform: translateY(0px); }
-      100% { transform: translateY(-10px); }
+      100% { transform: translateY(-12px); }
     }
 
     .new {
@@ -116,56 +127,59 @@
       border-bottom: 3px solid gold;
       margin-top: 20px;
       padding: 60px 20px;
-      border-radius: 25px;
+      border-radius: 30px;
     }
 
-    /* ----------- Sección para obtener Brainrot ----------- */
+    /* ---------- Sección para obtener Brainrot ---------- */
     .get-brainrot {
-      background: #1a1a1a;
-      border: 2px solid #ffcc00;
-      border-radius: 20px;
-      margin: 50px auto;
-      padding: 50px 30px;
-      max-width: 800px;
-      box-shadow: 0 0 20px rgba(255,204,0,0.5);
+      background: linear-gradient(135deg, #111, #1a1a1a);
+      border: 3px solid #ffcc00;
+      border-radius: 25px;
+      margin: 60px auto;
+      padding: 60px 40px;
+      max-width: 900px;
+      box-shadow: 0 0 30px rgba(255,204,0,0.7);
+      transition: transform 0.3s;
+    }
+
+    .get-brainrot:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 50px rgba(255,204,0,0.9);
     }
 
     .get-brainrot h2 {
-      font-size: 2.5em;
+      font-size: 2.8em;
       margin-bottom: 30px;
       color: #ffcc00;
-      text-shadow: 0 0 10px #ffcc00;
+      text-shadow: 0 0 15px #ffcc00;
     }
 
     .get-brainrot p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       color: #ccc;
       line-height: 1.8;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .get-brainrot a {
       text-decoration: none;
       color: #1a1a1a;
       background: linear-gradient(90deg, #ffcc00, #ff9900);
-      padding: 15px 25px;
-      border-radius: 12px;
+      padding: 18px 35px;
+      border-radius: 15px;
       font-weight: bold;
+      font-size: 1.2em;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .get-brainrot a:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px #ffcc00;
+      box-shadow: 0 0 25px #ffcc00;
     }
 
-    /* ----------- Responsive ----------- */
-    @media (max-width: 768px) {
-      .product { width: 45%; }
-    }
-    @media (max-width: 480px) {
-      .product { width: 90%; }
-    }
+    /* ---------- Responsive ---------- */
+    @media (max-width: 768px) { .product { width: 45%; } }
+    @media (max-width: 480px) { .product { width: 90%; } }
 
   </style>
 </head>
@@ -243,13 +257,11 @@
   <div class="get-brainrot">
     <h2>¡Obtén tu Brainrot!</h2>
     <p>
-      Para recibir tu Brainrot debes seguirme en Roblox, enviarme una solicitud y esperar a que la acepte. 
+      Para obtener tu Brainrot solo debes unirte a mí en Roblox. 
       <br><br>
-      1. Haz clic en el botón de abajo para ir a mi perfil de Roblox.<br>
-      2. Envíame una solicitud de amistad.<br>
-      3. Una vez que acepte tu solicitud, ¡listo! Ahora podrás obtener tu Brainrot.
+      Haz clic en el botón de abajo y únete a mi perfil. ¡Así de simple!
     </p>
-    <a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Seguir en Roblox</a>
+    <a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Unirse en Roblox</a>
   </div>
 
 </body>
