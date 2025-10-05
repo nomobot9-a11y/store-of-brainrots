@@ -1,279 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Store of Brainrots - Profesional</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* General */
-body{
-  font-family:'Roboto',sans-serif;
-  margin:0;
-  padding:0;
-  background: radial-gradient(circle at top,#0b0b0b,#1a1a1a);
-  color:#fff;
-  text-align:center;
-  overflow-x:hidden;
-}
-
-/* Header */
-header{
-  background:linear-gradient(90deg,#ffcc00,#ff9900);
-  padding:60px 20px;
-  box-shadow:0 6px 25px rgba(0,0,0,0.6);
-}
-header h1{
-  margin:0;
-  font-size:3em;
-  color:#1a1a1a;
-  text-shadow:0 0 15px #ffcc00;
-}
-
-/* Secciones */
-.section{
-  padding:70px 20px;
-}
-.section h2{
-  font-size:2.5em;
-  margin-bottom:50px;
-  color:#ffcc00;
-  text-shadow:0 0 10px #ffcc00;
-}
-
-/* Productos */
-.products{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:30px;
-}
-.product{
-  background:linear-gradient(135deg,#222,#333);
-  border-radius:25px;
-  padding:20px;
-  width:250px;
-  transition:transform 0.3s,box-shadow 0.3s;
-  box-shadow:0 8px 25px rgba(0,0,0,0.6);
-  position:relative;
-}
-.product img{
-  width:100%;
-  border-radius:20px;
-  transition:transform 0.3s,box-shadow 0.3s;
-}
-.product:hover img{
-  transform:scale(1.05);
-  box-shadow:0 0 20px gold;
-}
-.product h3{
-  margin:15px 0 5px;
-  color:#ffcc00;
-}
-.product p{
-  margin:5px 0 10px;
-  color:#ccc;
-  font-weight:bold;
-}
-.product .tag{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:gold;
-  color:#1a1a1a;
-  font-weight:bold;
-  padding:5px 10px;
-  border-radius:10px;
-  font-size:0.85em;
-}
-
-/* Botones */
-.product button{
-  padding:10px 25px;
-  border:none;
-  border-radius:15px;
-  background:linear-gradient(90deg,#ffcc00,#ff9900);
-  color:#1a1a1a;
-  font-weight:bold;
-  cursor:pointer;
-  transition:transform 0.2s,box-shadow 0.2s;
-}
-.product button:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #ffcc00;
-}
-
-/* Nuevos Brainrots */
-.new .product{
-  border:3px solid gold;
-  box-shadow:0 0 25px gold;
-  animation:bounce 1s infinite alternate;
-}
-@keyframes bounce{
-  0%{transform:translateY(0);}
-  100%{transform:translateY(-10px);}
-}
-
-/* Obtener Brainrot */
-.get-brainrot{
-  background:linear-gradient(135deg,#111,#1a1a1a);
-  border:3px solid #ffcc00;
-  border-radius:25px;
-  margin:80px auto;
-  padding:60px 40px;
-  max-width:900px;
-  box-shadow:0 0 40px rgba(255,204,0,0.8);
-}
-.get-brainrot h2{
-  font-size:2.8em;
-  margin-bottom:25px;
-  color:#ffcc00;
-}
-.get-brainrot p, .get-brainrot li{
-  font-size:1.2em;
-  color:#ccc;
-  line-height:1.8em;
-}
-.get-brainrot ol{
-  text-align:left;
-  max-width:700px;
-  margin:0 auto 30px;
-}
-.get-brainrot a{
-  display:inline-block;
-  margin-top:20px;
-  padding:18px 40px;
-  border-radius:15px;
-  background:linear-gradient(90deg,#ffcc00,#ff9900);
-  color:#1a1a1a;
-  font-weight:bold;
-  font-size:1.2em;
-  text-decoration:none;
-  transition:transform 0.2s,box-shadow 0.2s;
-}
-.get-brainrot a:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 25px #ffcc00;
-}
-
-/* Responsive */
-@media(max-width:768px){.product{width:45%;}}
-@media(max-width:480px){.product{width:90%;}}
-</style>
+  <meta charset="UTF-8">
+  <title>Store of Brainrots</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #1a1a1a, #222);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    h1 {
+      padding: 20px;
+      background-color: #111;
+      color: gold;
+      font-size: 2.5em;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px #000;
+      margin: 0;
+    }
+    .section {
+      padding: 30px 10px;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+    .product {
+      background-color: #222;
+      padding: 15px;
+      border-radius: 15px;
+      width: 220px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      position: relative;
+    }
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px gold;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2em;
+    }
+    .product p {
+      margin: 5px 0;
+      font-weight: bold;
+      color: #ffcc00;
+    }
+    .product button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      border: none;
+      background-color: #ffcc00;
+      color: #000;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .product button:hover {
+      background-color: #e6b800;
+    }
+    .stars {
+      color: gold;
+      margin: 5px 0;
+    }
+    .verified {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: gold;
+      color: #000;
+      font-weight: bold;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-size: 0.8em;
+    }
+    /* Nuevos productos destacados */
+    .new .product {
+      border: 3px solid gold;
+      animation: bounce 1s infinite alternate;
+    }
+    @keyframes bounce {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-<h1>Store of Brainrots</h1>
-</header>
+  <h1>Store of Brainrots</h1>
 
-<!-- Brainrots baratos -->
-<div class="section" id="cheap">
-<h2>Brainrots baratos o al mejor precio</h2>
-<div class="products">
-<!-- La Grande Combinasion -->
-<div class="product">
-<img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
-<h3>La Grande Combinasion</h3>
-<p>Da 10M/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
-</div>
-<!-- Los Combinasionas -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-1b580c508a172172641e7951c3146732/420/420/BackAccessory/Webp/noFilter" alt="Los Combinasionas">
-<h3>Los Combinasionas</h3>
-<p>Da 15M/s</p>
-<div class="tag">Edición Especial</div>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511620141/Los-Combinasionas'">Comprar</button>
-</div>
-</div>
-</div>
+  <!-- Brainrots baratos -->
+  <div class="section" id="cheap">
+    <h2>Brainrots baratos o al mejor precio</h2>
+    <div class="products">
+      <!-- Los Bros -->
+      <div class="product">
+        <div class="verified">✔</div>
+        <img src="https://static.wikitide.net/italianbrainrotwiki/thumb/d/dd/Los_Tralaleritos_and_Los_Tungtungtungcitos.png/300px-Los_Tralaleritos_and_Los_Tungtungtungcitos.png" alt="Los Bros">
+        <h3>Los Bros</h3>
+        <p>24M/s</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1512331738/Los-Bros'">Comprar</button>
+      </div>
+    </div>
+  </div>
 
-<!-- Todos los Brainrots -->
-<div class="section" id="all">
-<h2>Todos los Brainrots</h2>
-<div class="products">
-<!-- Graipuss Medussi -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
-<h3>Graipuss Medussi</h3>
-<p>Da 1M/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
-</div>
-<!-- La Grande Combinasion -->
-<div class="product">
-<img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
-<h3>La Grande Combinasion</h3>
-<p>Da 10M/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
-</div>
-<!-- Job Job Job Sahur -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
-<h3>Job Job Job Sahur</h3>
-<p>Da 700K/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Comprar</button>
-</div>
-<!-- Chicleteira Bicicleteira -->
-<div class="product">
-<img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
-<h3>Chicleteira Bicicleteira</h3>
-<p>Da 3,5M/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
-</div>
-<!-- Los Combinasionas -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-1b580c508a172172641e7951c3146732/420/420/BackAccessory/Webp/noFilter" alt="Los Combinasionas">
-<h3>Los Combinasionas</h3>
-<p>Da 15M/s</p>
-<div class="tag">Edición Especial</div>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511620141/Los-Combinasionas'">Comprar</button>
-</div>
-</div>
-</div>
+  <!-- Todos los Brainrots -->
+  <div class="section" id="all">
+    <h2>Todos los Brainrots</h2>
+    <div class="products">
+      <!-- Los Hotspotsitos -->
+      <div class="product">
+        <div class="verified">✔</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCH-TWG-kcKDzs7camsq2cblFNtMSm64q-Aw&s" alt="Los Hotspotsitos">
+        <h3>Los Hotspotsitos</h3>
+        <p>20M/s</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511924064/Los-Hotspotsitos'">Comprar</button>
+      </div>
 
-<!-- Nuevos Brainrots -->
-<div class="section new" id="new">
-<h2>Nuevos Brainrots</h2>
-<div class="products">
-<!-- Chicleteira -->
-<div class="product">
-<img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
-<h3>Chicleteira Bicicleteira</h3>
-<p>Da 3,5M/s</p>
-<div class="tag">Raro</div>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
-</div>
-<!-- Graipuss -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
-<h3>Graipuss Medussi</h3>
-<p>Da 1M/s</p>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
-</div>
-<!-- Los Combinasionas -->
-<div class="product">
-<img src="https://tr.rbxcdn.com/180DAY-1b580c508a172172641e7951c3146732/420/420/BackAccessory/Webp/noFilter" alt="Los Combinasionas">
-<h3>Los Combinasionas</h3>
-<p>Da 15M/s</p>
-<div class="tag">Edición Especial</div>
-<button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511620141/Los-Combinasionas'">Comprar</button>
-</div>
-</div>
-</div>
+      <!-- Los Bros -->
+      <div class="product">
+        <div class="verified">✔</div>
+        <img src="https://static.wikitide.net/italianbrainrotwiki/thumb/d/dd/Los_Tralaleritos_and_Los_Tungtungtungcitos.png/300px-Los_Tralaleritos_and_Los_Tungtungtungcitos.png" alt="Los Bros">
+        <h3>Los Bros</h3>
+        <p>24M/s</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1512331738/Los-Bros'">Comprar</button>
+      </div>
+    </div>
+  </div>
 
-<!-- Sección Obtener Brainrot -->
-<div class="get-brainrot">
-<h2>¡Obtén tu Brainrot!</h2>
-<p>Para recibir tu Brainrot correctamente, sigue estos pasos:</p>
-<ol>
-<li>Primero, <strong>sígueme en Roblox</strong>.</li>
-<li>Después, <strong>envíame solicitud (soli)</strong> <em>solo si ya compraste tu Brainrot</em>.</li>
-<li>Una vez aceptada la solicitud, <strong>únete a mi juego y Listo!</strong>.</li>
-</ol>
-<p style="color:#ccc;">⚠️ Nota: Si no has comprado el Brainrot, no envíes solicitud ni intentes unirte. Esto asegura que todo funcione correctamente.</p>
-<a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Seguir en Roblox</a>
-</div>
+  <!-- Nuevos Brainrots -->
+  <div class="section new" id="new">
+    <h2>Brainrots más recientes</h2>
+    <div class="products">
+      <!-- Los Hotspotsitos -->
+      <div class="product">
+        <div class="verified">✔</div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCH-TWG-kcKDzs7camsq2cblFNtMSm64q-Aw&s" alt="Los Hotspotsitos">
+        <h3>Los Hotspotsitos</h3>
+        <p>20M/s</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511924064/Los-Hotspotsitos'">Comprar</button>
+      </div>
+
+      <!-- Los Bros -->
+      <div class="product">
+        <div class="verified">✔</div>
+        <img src="https://static.wikitide.net/italianbrainrotwiki/thumb/d/dd/Los_Tralaleritos_and_Los_Tungtungtungcitos.png/300px-Los_Tralaleritos_and_Los_Tungtungtungcitos.png" alt="Los Bros">
+        <h3>Los Bros</h3>
+        <p>24M/s</p>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1512331738/Los-Bros'">Comprar</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
