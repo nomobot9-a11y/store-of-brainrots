@@ -1,268 +1,284 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Store of Brainrots - Profesional</title>
-  <style>
-    /* ---------- Fuentes y cuerpo ---------- */
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+<meta charset="UTF-8">
+<title>Store of Brainrots - Premium</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    body {
-      font-family: 'Roboto', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
-      color: #fff;
-      text-align: center;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0; padding: 0;
+  background: radial-gradient(circle at top, #0b0b0b, #1a1a1a);
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    /* ---------- Header animado ---------- */
-    header {
-      background: linear-gradient(90deg, #ffcc00, #ff9900);
-      padding: 50px 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      position: relative;
-      overflow: hidden;
-    }
+/* ---------- Header animado ---------- */
+header {
+  background: linear-gradient(90deg, #ffcc00, #ff9900);
+  padding: 60px 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  position: relative;
+  overflow: hidden;
+}
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  color: #1a1a1a;
+  text-shadow: 0 0 15px #ffcc00;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+@keyframes glow {
+  0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
+  100% { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900; }
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 3em;
-      color: #1a1a1a;
-      text-shadow: 0 0 15px #ffcc00;
-      animation: glow 2s ease-in-out infinite alternate;
-    }
+/* ---------- Secciones ---------- */
+.section {
+  padding: 60px 20px;
+}
+.section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+}
 
-    @keyframes glow {
-      0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
-      100% { text-shadow: 0 0 20px #ffcc00, 0 0 30px #ff9900; }
-    }
+/* ---------- Contenedor de productos ---------- */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
 
-    /* ---------- Secciones ---------- */
-    .section {
-      padding: 60px 20px;
-    }
+/* ---------- Tarjetas de productos ---------- */
+.product {
+  background: #222;
+  border-radius: 25px;
+  padding: 25px;
+  width: 240px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+}
+.product:nth-child(1) { animation-delay: 0.1s; }
+.product:nth-child(2) { animation-delay: 0.2s; }
+.product:nth-child(3) { animation-delay: 0.3s; }
+.product:nth-child(4) { animation-delay: 0.4s; }
 
-    .section h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      color: #ffcc00;
-      text-shadow: 0 0 10px #ffcc00;
-    }
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
 
-    /* ---------- Contenedor de productos ---------- */
-    .products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
+.product img {
+  width: 100%;
+  border-radius: 20px;
+  transition: transform 0.3s;
+}
+.product:hover img {
+  transform: scale(1.07) rotate(1deg);
+}
+.product h3 {
+  margin: 20px 0 10px;
+  color: #ffcc00;
+  font-size: 1.3em;
+}
+.product p {
+  margin: 5px 0 15px;
+  color: #ccc;
+  font-weight: bold;
+}
+.product button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #ffcc00, #ff9900);
+  color: #1a1a1a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.product button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ffcc00;
+}
 
-    /* ---------- Tarjetas de productos ---------- */
-    .product {
-      background: #222;
-      border-radius: 25px;
-      padding: 25px;
-      width: 240px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.5);
-      position: relative;
-    }
+/* ---------- Nuevos Brainrots ---------- */
+.new .product {
+  border: 3px solid gold;
+  box-shadow: 0 0 30px gold;
+  animation: bounce 1s infinite alternate;
+  background: linear-gradient(135deg, #222, #333);
+}
+@keyframes bounce {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-12px); }
+}
+.new {
+  background-color: #111;
+  border-top: 3px solid gold;
+  border-bottom: 3px solid gold;
+  margin-top: 20px;
+  padding: 60px 20px;
+  border-radius: 30px;
+}
 
-    .product img {
-      width: 100%;
-      border-radius: 20px;
-      transition: transform 0.3s;
-    }
+/* ---------- Sección “Obtener Brainrot” ---------- */
+.get-brainrot {
+  background: linear-gradient(135deg, #111, #1a1a1a);
+  border: 3px solid #ffcc00;
+  border-radius: 25px;
+  margin: 60px auto;
+  padding: 60px 40px;
+  max-width: 900px;
+  box-shadow: 0 0 30px rgba(255,204,0,0.7);
+  transition: transform 0.3s;
+}
+.get-brainrot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 50px rgba(255,204,0,0.9);
+}
+.get-brainrot h2 {
+  font-size: 2.8em;
+  margin-bottom: 30px;
+  color: #ffcc00;
+  text-shadow: 0 0 15px #ffcc00;
+}
+.get-brainrot p {
+  font-size: 1.3em;
+  color: #ccc;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.get-brainrot a {
+  text-decoration: none;
+  color: #1a1a1a;
+  background: linear-gradient(90deg, #ffcc00, #ff9900);
+  padding: 18px 35px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.2em;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.get-brainrot a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #ffcc00;
+}
 
-    .product:hover img {
-      transform: scale(1.07) rotate(1deg);
-    }
+/* ---------- Más Brainrots ---------- */
+.more-brainrots {
+  padding: 60px 20px;
+  background: #111;
+  border-radius: 25px;
+  margin: 60px 20px;
+}
+.more-brainrots h2 {
+  color: #ffcc00;
+  text-shadow: 0 0 10px #ffcc00;
+  margin-bottom: 40px;
+}
+.more-brainrots .products { gap: 40px; }
 
-    .product h3 {
-      margin: 20px 0 10px;
-      color: #ffcc00;
-      font-size: 1.3em;
-    }
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) { .product { width: 45%; } }
+@media (max-width: 480px) { .product { width: 90%; } }
 
-    .product p {
-      margin: 5px 0 15px;
-      color: #ccc;
-      font-weight: bold;
-    }
-
-    .product button {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #ffcc00, #ff9900);
-      color: #1a1a1a;
-      font-weight: bold;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .product button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #ffcc00;
-    }
-
-    /* ---------- Productos nuevos ---------- */
-    .new .product {
-      border: 3px solid gold;
-      box-shadow: 0 0 30px gold;
-      animation: bounce 1s infinite alternate;
-      background: linear-gradient(135deg, #222, #333);
-    }
-
-    @keyframes bounce {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-12px); }
-    }
-
-    .new {
-      background-color: #111;
-      border-top: 3px solid gold;
-      border-bottom: 3px solid gold;
-      margin-top: 20px;
-      padding: 60px 20px;
-      border-radius: 30px;
-    }
-
-    /* ---------- Sección para obtener Brainrot ---------- */
-    .get-brainrot {
-      background: linear-gradient(135deg, #111, #1a1a1a);
-      border: 3px solid #ffcc00;
-      border-radius: 25px;
-      margin: 60px auto;
-      padding: 60px 40px;
-      max-width: 900px;
-      box-shadow: 0 0 30px rgba(255,204,0,0.7);
-      transition: transform 0.3s;
-    }
-
-    .get-brainrot:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 50px rgba(255,204,0,0.9);
-    }
-
-    .get-brainrot h2 {
-      font-size: 2.8em;
-      margin-bottom: 30px;
-      color: #ffcc00;
-      text-shadow: 0 0 15px #ffcc00;
-    }
-
-    .get-brainrot p {
-      font-size: 1.3em;
-      color: #ccc;
-      line-height: 1.8;
-      margin-bottom: 40px;
-    }
-
-    .get-brainrot a {
-      text-decoration: none;
-      color: #1a1a1a;
-      background: linear-gradient(90deg, #ffcc00, #ff9900);
-      padding: 18px 35px;
-      border-radius: 15px;
-      font-weight: bold;
-      font-size: 1.2em;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .get-brainrot a:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #ffcc00;
-    }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 768px) { .product { width: 45%; } }
-    @media (max-width: 480px) { .product { width: 90%; } }
-
-  </style>
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Store of Brainrots</h1>
-  </header>
+<header>
+  <h1>Store of Brainrots</h1>
+</header>
 
-  <!-- Brainrots baratos -->
-  <div class="section" id="cheap">
-    <h2>Brainrots baratos o al mejor precio</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
-        <h3>La Grande Combinasion</h3>
-        <p>Da 10M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
-      </div>
+<!-- Brainrots baratos -->
+<div class="section" id="cheap">
+  <h2>Brainrots baratos o al mejor precio</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
+      <h3>La Grande Combinasion</h3>
+      <p>Da 10M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
     </div>
   </div>
+</div>
 
-  <!-- Todos los Brainrots -->
-  <div class="section" id="all">
-    <h2>Todos los Brainrots</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
-        <h3>Graipuss Medussi</h3>
-        <p>Da 1M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
-      </div>
-      <div class="product">
-        <img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
-        <h3>Job Job Job Sahur</h3>
-        <p>Da 700K/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Comprar</button>
-      </div>
-      <div class="product">
-        <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
-        <h3>La Grande Combinasion</h3>
-        <p>Da 10M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
-      </div>
-      <div class="product">
-        <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
-        <h3>Chicleteira Bicicleteira</h3>
-        <p>Da 3,5M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
-      </div>
+<!-- Todos los Brainrots -->
+<div class="section" id="all">
+  <h2>Todos los Brainrots</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
+      <h3>Graipuss Medussi</h3>
+      <p>Da 1M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
+    </div>
+    <div class="product">
+      <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
+      <h3>Chicleteira Bicicleteira</h3>
+      <p>Da 3,5M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
     </div>
   </div>
+</div>
 
-  <!-- Nuevos Brainrots -->
-  <div class="section new" id="new">
-    <h2>Nuevos Brainrots</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
-        <h3>Graipuss Medussi</h3>
-        <p>Da 1M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
-      </div>
-      <div class="product">
-        <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
-        <h3>Chicleteira Bicicleteira</h3>
-        <p>Da 3,5M/s</p>
-        <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
-      </div>
+<!-- Nuevos Brainrots -->
+<div class="section new" id="new">
+  <h2>Nuevos Brainrots</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://tr.rbxcdn.com/180DAY-eab35ca8b8a849f793a0196c9f4c6920/420/420/BackAccessory/Webp/noFilter" alt="Graipuss Medussi">
+      <h3>Graipuss Medussi</h3>
+      <p>Da 1M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511491002/Graipuss-Medussi'">Comprar</button>
+    </div>
+    <div class="product">
+      <img src="https://cdn.salla.sa/jDznl/015a239c-c622-486a-ad92-7927ec3d533b-1000x1000-0WEeGmKHRGPkRIHtshulgc9r9ENxLE1Wkpn3YJh6.png" alt="Chicleteira Bicicleteira">
+      <h3>Chicleteira Bicicleteira</h3>
+      <p>Da 3,5M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511793962/Chicleteira-Bicicleteira'">Comprar</button>
     </div>
   </div>
+</div>
 
-  <!-- Cómo obtener tu Brainrot -->
-  <div class="get-brainrot">
-    <h2>¡Obtén tu Brainrot!</h2>
-    <p>
-      Para obtener tu Brainrot solo debes unirte a mí en Roblox. 
-      <br><br>
-      Haz clic en el botón de abajo y únete a mi perfil. ¡Así de simple!
-    </p>
-    <a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Unirse en Roblox</a>
+<!-- Sección obtener Brainrot -->
+<div class="get-brainrot">
+  <h2>¡Obtén tu Brainrot!</h2>
+  <p>
+    Para obtener tu Brainrot solo debes:
+    <br><br>
+    1. Mandarme solicitud en Roblox.<br>
+    2. Esperar un momento mientras la acepto.<br>
+    3. Seguirme y unirte a mí.<br>
+    ¡Y listo! Así tendrás tu Brainrot.
+  </p>
+  <a href="https://www.roblox.com/es/users/950675361/profile" target="_blank">Unirse en Roblox</a>
+</div>
+
+<!-- Más Brainrots -->
+<div class="more-brainrots">
+  <h2>¡Más Brainrots!</h2>
+  <div class="products">
+    <div class="product">
+      <img src="https://tr.rbxcdn.com/180DAY-0e1869f8333d3d4ea2693f280ee93c18/420/420/Hat/Webp/noFilter" alt="Job Job Job Sahur">
+      <h3>Job Job Job Sahur</h3>
+      <p>Da 700K/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1510629712/Job-Job-Job-Sahur'">Comprar</button>
+    </div>
+    <div class="product">
+      <img src="https://production-gameflipusercontent.fingershock.com/us-east-1:8e4a1321-7067-4ac5-8c93-deb12d4b1ad5/85cf3be7-37d6-4171-b144-830be455668a/88e4ee11-61ed-4a14-9056-d6085b91a8ce/640x640.webp" alt="La Grande Combinasion">
+      <h3>La Grande Combinasion</h3>
+      <p>Da 10M/s</p>
+      <button onclick="window.location.href='https://www.roblox.com/es/game-pass/1511493239/La-Grande-Combinasion'">Comprar</button>
+    </div>
   </div>
+</div>
 
 </body>
 </html>
